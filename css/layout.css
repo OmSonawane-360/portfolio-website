@@ -67,6 +67,73 @@ nav.scrolled{background:rgba(14,14,14,.94);border-bottom:1px solid var(--border)
 .scroll-line{width:1px;height:38px;background:linear-gradient(to bottom,rgba(255,255,255,.4),transparent);animation:sdwn 2s infinite;}
 @keyframes sdwn{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
+
+/* ===== MOBILE HERO FIX ===== */
+@media (max-width: 768px){
+.hero-content-col{
+margin-top:18px;
+position:relative;
+z-index:5;
+}
+#hero{
+grid-template-columns:1fr;
+min-height:auto;
+padding:120px 0 60px;
+}
+
+.hero-left-text,
+.hero-right-text{
+display:none;
+}
+
+.hero-photo-col{
+grid-column:auto;
+order:1;
+padding-top:0;
+align-items:center;
+justify-content:center;
+}
+.hero-photo-wrap{
+margin-bottom:14px;
+}
+.hero-photo-wrap{
+height:420px;
+max-height:none;
+background-position:50% 20%;
+border-radius:24px;
+}
+
+.hero-content-col{
+grid-column:auto;
+order:2;
+padding:40px 22px 0;
+text-align:left;
+}
+
+.hero-name .first{
+font-size:2.6rem;
+}
+.hero-name .last{
+font-size:clamp(2.4rem,10vw,4rem);
+line-height:.95;
+}
+
+.hero-desc{
+max-width:100%;
+font-size:.88rem;
+}
+
+.hero-cta{
+margin-top:10px;
+}
+
+.hero-scroll{
+display:none;
+}
+
+}
+
+
 /* MUSIC PLAYER BLOCK */
 #music-player{position:fixed;bottom:28px;right:80px;z-index:500;font-family:var(--font-mono);}
 .player-pill{display:flex;align-items:center;gap:10px;background:rgba(20,20,20,.92);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:8px 16px 8px 8px;backdrop-filter:blur(20px);cursor:none;transition:var(--transition);box-shadow:0 8px 32px rgba(0,0,0,.5);}
@@ -345,3 +412,53 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:30px 52px
   .contrib-grid{grid-template-columns:repeat(13,1fr);}
 }
 
+/* ===== PROJECT CARDS MOBILE FIX ===== */
+
+
+.projects-section{
+overflow-x:hidden;
+}
+body{
+overflow-x:hidden;
+}
+/* ===== PROJECT CARDS MOBILE FIX ===== */
+@media (max-width: 768px){
+
+.projects-grid{
+display:flex;
+flex-direction:column;
+gap:18px;
+padding:0 18px;
+}
+
+.project-card{
+width:100%;
+min-width:0;
+border-radius:22px;
+}
+
+.project-card-inner{
+padding:22px;
+}
+
+.project-title{
+font-size:1.4rem;
+}
+
+.project-desc{
+font-size:.85rem;
+line-height:1.6;
+}
+
+.project-tags{
+flex-wrap:wrap;
+gap:6px;
+}
+
+.project-image{
+height:160px;
+object-fit:cover;
+border-radius:16px;
+}
+
+}
